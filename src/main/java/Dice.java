@@ -6,7 +6,7 @@ import java.util.Random;
  * <br>We can roll the die to get a random value in the game.
  */
 public class Dice {
-    /**
+    /*
      * Private member variables.
      */
     /**

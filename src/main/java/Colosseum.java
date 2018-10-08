@@ -43,7 +43,7 @@ public class Colosseum {
      * The process will still be the same for getting the information from the user,
      * but now we are adding the feature where the user can pick what TYPE of
      * Pokemon we are going to battle.
-     *
+     * <p>
      * How we will build our Pokemon to battle.
      * <p>
      * Have the user select from a list of 3 different types of Pokemon.
@@ -99,8 +99,7 @@ public class Colosseum {
      * Sorry. The defense level must be between 1 and 23: 23
      *
      * @return tempPokemon - the Pokemon we built and are going to set our fighting Pokemon to <br>
-     *         (Look, we can return objects too!)
-     *         <p>
+     * (Look, we can return objects too!)
      */
     public static Pokemon buildPokemon() {
         Pokemon returnPokemon = null;
@@ -190,18 +189,20 @@ public class Colosseum {
             secondPokemon = tempPokemon;
         }
     }
+
     /**
      * Just a simple menu printer for the types of Pokemon
      * so we don't clutter other functions printing it over and over. <p>
      * You do not need to modify this function.
      */
     public static void printTypeMenu() {
-       System.out.println("Select from the following Pokemon types: ");
-       System.out.println("1 - Electric Pokemon ");
-       System.out.println("2 - Fire Pokemon");
-       System.out.println("3 - Water Pokemon");
+        System.out.println("Select from the following Pokemon types: ");
+        System.out.println("1 - Electric Pokemon ");
+        System.out.println("2 - Fire Pokemon");
+        System.out.println("3 - Water Pokemon");
 
     }
+
     /**
      * Conducts the Pokemon battle.
      * <p>

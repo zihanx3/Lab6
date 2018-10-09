@@ -39,6 +39,12 @@ public class Colosseum {
     static Scanner myScan;
 
     /**
+     * the maximum of attack levels that pokemons can set to be.
+     */
+    static final int MAX_ATTACK_LEVELS = 49;
+
+
+    /**
      * We are now reimplementing this to meet our new Pokemon specifications. <br>
      * The process will still be the same for getting the information from the user,
      * but now we are adding the feature where the user can pick what TYPE of
@@ -102,7 +108,38 @@ public class Colosseum {
      * (Look, we can return objects too!)
      */
     public static Pokemon buildPokemon() {
-        Pokemon returnPokemon = null;
+        Pokemon returnPokemon = new Pokemon();
+        int type = myScan.nextInt();
+        int hits = myScan.nextInt();
+        int attackLevels = myScan.nextInt();
+        int defenseLevels = myScan.nextInt();
+
+        while (type < 1 || type > 3) {
+            System.out.println("Sorry, you must pick either 1, 2, or 3.");
+        }
+        while (hits < 1 || hits > MAX_HIT_POINTS) {
+            System.out.println("Sorry. Hit points must be between 1 and 50: " + myScan.nextInt());
+        }
+        while (attackLevels < 1 || attackLevels > MAX_ATTACK_LEVELS) {
+            System.out.println("Sorry. The attack level must be between 1 and 49: " + attackLevels);
+        }
+        while (defenseLevels < 1 || defenseLevels > (MAX_HIT_POINTS - attackLevels)) {
+            System.out.println("Sorry. The defense level level must be between 1 and" + (MAX_HIT_POINTS - attackLevels)
+        + ": " + attackLevels);
+        }
+        String pokeType;
+        if (type == 1) {
+            pokeType = "Electric";
+        } else if (type == 2) {
+            pokeType = "FirePokemon";
+        } else {
+            pokeType = "WaterPokemon";
+        }
+        returnPokemon.pokeType = pokeType;
+        returnPokemon.setHitPoints(hits);
+        returnPokemon.setAttackLevel(attackLevels);
+        returnPokemon.setDefenseLevel(defenseLevels);
+        returnPokemon.setName(myScan.nextLine());
         return returnPokemon;
     }
 
